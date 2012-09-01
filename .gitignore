@@ -6,4 +6,3 @@ pom.xml
 .lein-deps-sum
 .DS_Store
 /target/
-/resources/test.config
