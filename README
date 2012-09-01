@@ -1,0 +1,17 @@
+# twitter-utils
+
+Some personal Twitter helper functions. Using it as library in a website. May add some more functions in the future.
+
+## Usage
+
+Look at the public functions in core.clj. 
+
+## Testing
+
+To test this project add your own tokens into the test/twitter-utils/test/core.clj file and run 'lein midje'.
+
+## License
+
+Copyright (C) 2011 
+
+Distributed under the Eclipse Public License, the same as Clojure.
