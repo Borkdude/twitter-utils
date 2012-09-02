@@ -45,7 +45,7 @@
 (defn seq-with-maps-with-screennames? [s]
   (every? #(:screen_name %) s))
 
-(fact (seq-with-maps-with-screennames? [{:screen_name "Michiel"} {:screen_name "Borkdude"}]))
+(fact (seq-with-maps-with-screennames? [{:screen_name "Michiel"} {:screen_name "Borkdude"}]) => true)
 
 (fact
  "Userinfos delivers a sequence of map and every map is supposed to have a :screenname key"
@@ -55,8 +55,8 @@
   (and (set? v)
        (every? integer? v)))
 
-(fact (set-of-ints? #{}))
-(fact (set-of-ints? #{1 2 3}))
+(fact (set-of-ints? #{}) => true)
+(fact (set-of-ints? #{1 2 3}) => true)
 (fact (set-of-ints? nil) => false)
 (fact (set-of-ints? #{1.0 2 3}) => false)
 
@@ -67,7 +67,9 @@
 
 (fact (followers-minus-friends *user-screen-name*) => seq-of-strings?)
 
-(def *creds* (make-oauth-creds *app-token* *app-secret* *user-token* *user-secret*))
+(def ^:dynamic *creds* (make-oauth-creds *app-token* *app-secret* *user-token* *user-secret*))
+
+(print *app-token*)
 
 (fact (friend-ids-by-auth *creds*) => set-of-ints?)
 
